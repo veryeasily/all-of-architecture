@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Birth</th>
+      <th>Death</th>
+      <th>Nationality</th>
+      <th>Birthplace</th>
+      <th>Gender</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.first %></td>
+        <td><%= person.last %></td>
+        <td><%= person.birth %></td>
+        <td><%= person.death %></td>
+        <td><%= person.nationality %></td>
+        <td><%= person.birthplace %></td>
+        <td><%= person.gender %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', new_person_path %>

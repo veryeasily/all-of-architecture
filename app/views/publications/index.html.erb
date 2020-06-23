@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Publications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kind</th>
+      <th>Title</th>
+      <th>Short title</th>
+      <th>Abstract</th>
+      <th>Journal</th>
+      <th>Volume</th>
+      <th>Place</th>
+      <th>Publisher</th>
+      <th>Issue</th>
+      <th>Date</th>
+      <th>Doi</th>
+      <th>Issn</th>
+      <th>Isbn</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @publications.each do |publication| %>
+      <tr>
+        <td><%= publication.kind %></td>
+        <td><%= publication.title %></td>
+        <td><%= publication.short_title %></td>
+        <td><%= publication.abstract %></td>
+        <td><%= publication.journal %></td>
+        <td><%= publication.volume %></td>
+        <td><%= publication.place %></td>
+        <td><%= publication.publisher %></td>
+        <td><%= publication.issue %></td>
+        <td><%= publication.date %></td>
+        <td><%= publication.doi %></td>
+        <td><%= publication.issn %></td>
+        <td><%= publication.isbn %></td>
+        <td><%= link_to 'Show', publication %></td>
+        <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
+        <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Publication', new_publication_path %>

@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@publication) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :kind, collection: Publication.kinds.keys %>
+    <%= f.input :title %>
+    <%= f.input :short_title %>
+    <%= f.input :abstract %>
+    <%= f.input :journal %>
+    <%= f.input :volume %>
+    <%= f.input :place %>
+    <%= f.input :publisher %>
+    <%= f.input :issue %>
+    <%= f.input :date %>
+    <%= f.input :doi %>
+    <%= f.input :issn %>
+    <%= f.input :isbn %>
+    <%= f.association :people, label_method: :full_name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
