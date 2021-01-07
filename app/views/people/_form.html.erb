@@ -2,8 +2,8 @@
 
   <%= form.input :first %>
   <%= form.input :last %>  
-  <%= form.input :birth, min: 270.years.ago, max: Date.today, allow_blank: true  %>
-  <%= form.input :death, min: 270.years.ago, max: Date.today, allow_blank: true  %>
+  <%= form.input :birth, start_year: 1750, end_year: 2020, include_blank: true %>
+  <%= form.input :death, start_year: 1750, end_year: 2020, include_blank: true %>
   <%= form.input :nationality %>
   <%= form.input :birthplace %>
   <%= form.input :gender %>
